@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
+
+/* ── 답추 팝업 오버레이 ─────────────────────── */
+.rs-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.6);
+    z-index: 999999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+}
+
+/* ── 팝업 본체 ───────────────────────────────── */
+.rs-popup {
+    position: relative;
+    width: 92vw;
+    max-width: 520px;
+    max-height: 85vh;
+    background: #f4f0e6;
+    border: 2px solid #222;
+    box-shadow: 4px 4px 0px #222;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* ── 헤더 ────────────────────────────────────── */
+.rs-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    border-bottom: 2px solid #222;
+    background: #fff;
+    flex-shrink: 0;
+}
+.rs-header-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #222;
+}
+.rs-close-btn {
+    background: #dadada;
+    border: 1px solid #222;
+    padding: 4px 10px;
+    font-size: 12px;
+    font-weight: 900;
+    cursor: pointer;
+    box-shadow: 1px 1px 0px #222;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+.rs-close-btn:active {
+    box-shadow: 0 0 0 #222;
+    transform: translate(1px, 1px);
+}
+
+/* ── 컨텐츠 영역 ────────────────────────────── */
+.rs-content {
+    flex: 1;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* ── 로딩 ────────────────────────────────────── */
+.rs-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    padding: 40px 20px;
+    color: #555;
+    font-size: 14px;
+}
+.rs-spinner {
+    width: 32px;
+    height: 32px;
+    border: 3px solid #ddd;
+    border-top-color: #e65c41;
+    border-radius: 50%;
+    animation: rs-spin 0.8s linear infinite;
+}
+@keyframes rs-spin {
+    to { transform: rotate(360deg); }
+}
+
+/* ── 카드 ────────────────────────────────────── */
+.rs-card {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px;
+    border: 1px solid #222;
+    background: #fff;
+    box-shadow: 2px 2px 0px #222;
+}
+.rs-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px dashed #ccc;
+    padding-bottom: 8px;
+}
+.rs-card-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    background: #e65c41;
+    color: #fff !important;
+    font-size: 13px;
+    font-weight: 700;
+    border: 1px solid #222;
+    flex-shrink: 0;
+}
+.rs-card-text {
+    font-size: 13px;
+    line-height: 1.7;
+    word-break: keep-all;
+    color: #222;
+    white-space: pre-wrap;
+}
+
+/* ── 버튼들 ──────────────────────────────────── */
+.rs-pick-btn {
+    display: inline-block;
+    padding: 4px 12px;
+    border: 1px solid #222;
+    background: #dadada;
+    font-size: 12px;
+    font-weight: 900;
+    cursor: pointer;
+    box-shadow: 1px 1px 0px #222;
+    transition: all 0.1s ease;
+    font-family: 'Noto Sans KR', sans-serif;
+    color: #222;
+}
+.rs-pick-btn:active {
+    box-shadow: 0 0 0 #222;
+    transform: translate(1px, 1px);
+}
+
+/* ── 에러 ────────────────────────────────────── */
+.rs-error {
+    padding: 20px;
+    text-align: center;
+    color: #e65c41;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+/* ── 설정 토글 행 ────────────────────────────── */
+.rs-setting-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 4px 0;
+}
+
+/* ── 모바일 ──────────────────────────────────── */
+@media (max-width: 480px) {
+    .rs-popup {
+        width: 96vw;
+        max-height: 90vh;
+    }
+    .rs-content {
+        padding: 10px;
+    }
+}
