@@ -177,6 +177,10 @@
     }
     .rs-content {
         padding: 10px;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        touch-action: pan-y;
+        overscroll-behavior: contain;
     }
 }
 
